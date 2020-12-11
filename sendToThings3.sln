@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sendToThings3", "sendToThings3\sendToThings3.csproj", "{483F6186-F26A-4888-B38F-6D85C47C1C78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{483F6186-F26A-4888-B38F-6D85C47C1C78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{483F6186-F26A-4888-B38F-6D85C47C1C78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{483F6186-F26A-4888-B38F-6D85C47C1C78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{483F6186-F26A-4888-B38F-6D85C47C1C78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C810EB3C-6865-4EDD-B9D9-D2984069691E}
+	EndGlobalSection
+EndGlobal
