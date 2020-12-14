@@ -10,7 +10,7 @@ namespace sendToThings3
 {
     class TrayContext : ApplicationContext
     {
-        private Form1 _form1 = new Form1();
+        private sendFormular _form1 = new sendFormular();
 
         private NotifyIcon trayIcon;
 
@@ -19,7 +19,7 @@ namespace sendToThings3
             // Initialize Tray Icon
             trayIcon = new NotifyIcon()
             {
-                Icon = Resources.icon,
+                Icon = Resources.icon ,
                 ContextMenu = new ContextMenu(new MenuItem[] {
                     new MenuItem("New", New),
                     new MenuItem("Exit", Exit)
