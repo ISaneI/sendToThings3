@@ -89,7 +89,7 @@ namespace sendToThings3
 
         private void sendFormular_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.S && e.Control || e.KeyCode == Keys.Enter && e.Shift)
+            if (e.KeyCode == Keys.S && e.Control || e.KeyCode == Keys.Enter && e.Control)
             {
                 saveNote();
                 e.Handled = true;

@@ -177,7 +177,7 @@ namespace sendToThings3
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(852, 23);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Press TAB to add details  | SHIFT + Enter or CTRL + S to send";
+            this.label1.Text = "Press TAB to add details  | CTRL + Enter or CTRL + S to send";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // sendFormular
