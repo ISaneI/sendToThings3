@@ -42,6 +42,16 @@ namespace sendToThings3
             hook.RegisterHotKey(sendToThings3.ModifierKeys.Control | sendToThings3.ModifierKeys.Alt,
                 Keys.OemPeriod);
 
+            p_text.Visible = true;
+            p_message.Enabled = false;
+            p_message.Visible = false;
+
+        }
+
+        //override onshow
+        protected override void OnShown(EventArgs e)
+        {
+            tb_title.Select();
         }
 
 
@@ -55,9 +65,12 @@ namespace sendToThings3
             }
 
             this.Show();
-            tb_title.Select();
+            
         }
 
+
+
+        /**
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
@@ -71,10 +84,12 @@ namespace sendToThings3
 
             base.WndProc(ref m);
         }
+        **/
+
 
         private void sendFormular_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.S && e.Control || e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.S && e.Control || e.KeyCode == Keys.Enter && e.Shift)
             {
                 saveNote();
                 e.Handled = true;
@@ -83,20 +98,31 @@ namespace sendToThings3
 
             if (e.KeyCode == Keys.Escape)
             {
-                tb_title.Clear();
-                tb_message.Clear();
-                this.Hide();
+                cancelNote();
+
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }
+        }
 
-
-
+        private void sendFormular_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyData == Keys.Tab)
+            { 
+                p_text.Visible = false;
+                p_message.Enabled = true;
+                p_message.Visible = true;
+            }
         }
 
         private void btn_send_Click(object sender, EventArgs e)
         {
+            saveNote();
+        }
 
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            cancelNote();
         }
 
         private void saveNote()
@@ -113,7 +139,24 @@ namespace sendToThings3
                 {
                     MessageBox.Show("Something went wrong sending the mail");
                 }
+
+                p_text.Visible = true;
+                p_message.Enabled = false;
+                p_message.Visible = false;
+
             }
         }
+
+        private void cancelNote()
+        {
+            tb_title.Clear();
+            tb_message.Clear();
+            this.Hide();
+
+            p_text.Visible = true;
+            p_message.Enabled = false;
+            p_message.Visible = false;
+        }
+
     }
 }
