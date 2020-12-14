@@ -32,7 +32,7 @@ namespace sendToThings3
         public sendFormular()
         {
             InitializeComponent();
-           // this.FormBorderStyle = FormBorderStyle.None;
+            // this.FormBorderStyle = FormBorderStyle.None;
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
 
             // register the event that is fired after the key press.
@@ -41,37 +41,9 @@ namespace sendToThings3
             // register the control + alt + F12 combination as hot key.
             hook.RegisterHotKey(sendToThings3.ModifierKeys.Control | sendToThings3.ModifierKeys.Alt,
                 Keys.OemPeriod);
-        }
-
-        private bool SendMail(string title, string message)
-        {
-            try
-            {
-                using (MailMessage mail = new MailMessage())
-                {
-                    mail.From = new MailAddress("***REMOVED***");
-                    mail.To.Add("add-to-things-xxxxxxxxxx@things.email");
-                    mail.Subject = title;
-                    mail.Body = message;
-                    //mail.IsBodyHtml = true;
-                    // mail.Attachments.Add(new Attachment("C:\\file.zip"));
-
-                    using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
-                    {
-                        smtp.Credentials = new NetworkCredential("***REMOVED***", "xxxxx");
-                        smtp.EnableSsl = true;
-                        smtp.Send(mail);
-                        return true;
-                    }
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
 
         }
+
 
         void hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {
@@ -83,6 +55,7 @@ namespace sendToThings3
             }
 
             this.Show();
+            tb_title.Select();
         }
 
         protected override void WndProc(ref Message m)
@@ -99,11 +72,47 @@ namespace sendToThings3
             base.WndProc(ref m);
         }
 
+        private void sendFormular_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.S && e.Control || e.KeyCode == Keys.Enter)
+            {
+                saveNote();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {
+                tb_title.Clear();
+                tb_message.Clear();
+                this.Hide();
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
+
+
+
+        }
+
         private void btn_send_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void saveNote()
         {
             if (!string.IsNullOrEmpty(tb_title.Text))
             {
-                SendMail(tb_title.Text, tb_message.Text);
+                if (Utils.SendMail(tb_title.Text, tb_message.Text))
+                {
+                    tb_title.Clear();
+                    tb_message.Clear();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Something went wrong sending the mail");
+                }
             }
         }
     }
