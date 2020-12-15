@@ -62,7 +62,7 @@ namespace sendToThings3
             try
             {
                 _settingsDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(
-                    File.ReadAllText(GetAppPath() + "settings")
+                    Cipher.Decrypt(File.ReadAllText(GetAppPath() + "settings"), "_settingsPW!")
                 );
             }
             catch (Exception e)
@@ -80,7 +80,7 @@ namespace sendToThings3
 
             try
             {
-                File.WriteAllText(GetAppPath() + "settings", JsonConvert.SerializeObject(_settingsDictionary));
+                File.WriteAllText(GetAppPath() + "settings", Cipher.Encrypt(JsonConvert.SerializeObject(_settingsDictionary), "_settingsPW!"));
             }
             catch (Exception e)
             {
