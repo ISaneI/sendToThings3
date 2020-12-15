@@ -26,8 +26,6 @@ namespace sendToThings3
                 }),
                 Visible = true
             };
-
-
         }
 
         void Exit(object sender, EventArgs e)

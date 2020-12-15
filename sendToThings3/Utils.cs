@@ -12,12 +12,20 @@ namespace sendToThings3
     {
         public static bool SendMail(string title, string message)
         {
+            string thingsMail = Storage.GetSetting("thingsMail");
+
+            if (thingsMail == null)
+            {
+                //TODO openSettings
+                return false;
+            }
+
             try
             {
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.From = new MailAddress("***REMOVED***");
-                    mail.To.Add("***REMOVED***");
+                    mail.To.Add(thingsMail);
                     mail.Subject = title;
                     mail.Body = message;
                     //mail.IsBodyHtml = true;
