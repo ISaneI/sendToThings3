@@ -17,6 +17,8 @@ namespace sendToThings3
             InitializeComponent();
 
             tb_thingsMail.Text = Storage.GetSetting("thingsMail");
+            tb_settings_sendingMail.Text = Storage.GetSetting("senderMail");
+            tb_settings_password.Text = Storage.GetSetting("senderPassword");
         }
 
         private void btn_settings_save_Click(object sender, EventArgs e)
@@ -24,6 +26,8 @@ namespace sendToThings3
             if (tb_thingsMail.TextLength > 5)
             {
                 Storage.SetSetting("thingsMail", tb_thingsMail.Text);
+                Storage.SetSetting("senderMail", tb_settings_sendingMail.Text);
+                Storage.SetSetting("senderPassword", tb_settings_password.Text);
                 this.Close();
             }
             else
