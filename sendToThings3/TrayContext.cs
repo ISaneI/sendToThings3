@@ -21,7 +21,8 @@ namespace sendToThings3
             {
                 Icon = Resources.icon ,
                 ContextMenu = new ContextMenu(new MenuItem[] {
-                    new MenuItem("New", New),
+                    new MenuItem("New Task", New),
+                    new MenuItem("Settings", Settings),
                     new MenuItem("Exit", Exit)
                 }),
                 Visible = true
@@ -38,6 +39,12 @@ namespace sendToThings3
         void New(object sender, EventArgs e)
         {
             _sendFormular.Show();
+        }
+
+        void Settings(object sender, EventArgs e)
+        {
+            settings _settingsForm = new settings();
+            _settingsForm.Show();
         }
     }
 }
