@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace sendToThings3
@@ -65,7 +62,7 @@ namespace sendToThings3
             try
             {
                 _settingsDictionary = JsonConvert.DeserializeObject<Dictionary<string, string>>(
-                    File.ReadAllText(GetAppPath())
+                    File.ReadAllText(GetAppPath() + "settings")
                 );
             }
             catch (Exception e)

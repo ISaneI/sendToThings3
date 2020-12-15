@@ -33,7 +33,7 @@ namespace sendToThings3
         public sendFormular()
         {
             InitializeComponent();
-            Storage.SetSetting("thingsMail", "***REMOVED***");
+            //Storage.SetSetting("thingsMail", "@things.email");
             // this.FormBorderStyle = FormBorderStyle.None;
             //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 10, 10));
 
