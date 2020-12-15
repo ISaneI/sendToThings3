@@ -65,7 +65,8 @@ namespace sendToThings3
             }
 
             this.Show();
-            
+            tb_title.Select();
+
         }
 
 
@@ -129,22 +130,31 @@ namespace sendToThings3
         {
             if (!string.IsNullOrEmpty(tb_title.Text))
             {
-                this.Hide();
-
-                if (Utils.SendMail(tb_title.Text, tb_message.Text))
+                if ((tb_message.TextLength + tb_title.TextLength) < 2000)
                 {
-                    tb_title.Clear();
-                    tb_message.Clear();
+                    
+                    this.Hide();
+
+                    if (Utils.SendMail(tb_title.Text, tb_message.Text)) 
+                    {
+                        tb_title.Clear();
+                        tb_message.Clear();
+                    }
+                    else
+                    {
+                        this.Show();
+                        MessageBox.Show("Something went wrong sending the mail");
+                    }
+
+                    p_text.Visible = true;
+                    p_message.Enabled = false;
+                    p_message.Visible = false;
+
                 }
                 else
                 {
-                    this.Show();
-                    MessageBox.Show("Something went wrong sending the mail");
+                    MessageBox.Show($"Stay under 2000 characters\nRemove {(tb_message.TextLength + tb_title.TextLength) - 2001} characters");
                 }
-
-                p_text.Visible = true;
-                p_message.Enabled = false;
-                p_message.Visible = false;
 
             }
         }
