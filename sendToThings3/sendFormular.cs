@@ -129,14 +129,16 @@ namespace sendToThings3
         {
             if (!string.IsNullOrEmpty(tb_title.Text))
             {
+                this.Hide();
+
                 if (Utils.SendMail(tb_title.Text, tb_message.Text))
                 {
                     tb_title.Clear();
                     tb_message.Clear();
-                    this.Hide();
                 }
                 else
                 {
+                    this.Show();
                     MessageBox.Show("Something went wrong sending the mail");
                 }
 
