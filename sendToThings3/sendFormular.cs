@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace sendToThings3
 {
-    public partial class sendFormular : Form
+    public partial class SendFormular : Form
     {
 
         KeyboardHook hook = new KeyboardHook();
@@ -30,7 +30,7 @@ namespace sendToThings3
         );
 
 
-        public sendFormular()
+        public SendFormular()
         {
             InitializeComponent();
             //Storage.SetSetting("thingsMail", "@things.email");

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace sendToThings3
 {
-    public partial class settings : Form
+    public partial class Settings : Form
     {
-        public settings()
+        public Settings()
         {
             InitializeComponent();
 

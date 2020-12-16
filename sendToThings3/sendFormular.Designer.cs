@@ -1,7 +1,7 @@
 ﻿
 namespace sendToThings3
 {
-    partial class sendFormular
+    partial class SendFormular
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace sendToThings3
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(sendFormular));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendFormular));
             this.tb_message = new System.Windows.Forms.TextBox();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.btn_send = new System.Windows.Forms.Button();
