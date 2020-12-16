@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace sendToThings3
 {
@@ -12,12 +8,22 @@ namespace sendToThings3
     {
         public static bool SendMail(string title, string message)
         {
+            string thingsMail = Storage.GetSetting("thingsMail");
+            string senderMail = Storage.GetSetting("senderMail");
+            string senderPassword = Storage.GetSetting("senderPassword");
+
+            if (thingsMail == null | senderMail == null | senderPassword == null)
+            {
+                //TODO openSettings
+                return false;
+            }
+
             try
             {
                 using (MailMessage mail = new MailMessage())
                 {
-                    mail.From = new MailAddress("owaygaming@gmail.com");
-                    mail.To.Add("add-to-things-ibceapkmpr1es4urwx5@things.email");
+                    mail.From = new MailAddress(senderMail);
+                    mail.To.Add(thingsMail);
                     mail.Subject = title;
                     mail.Body = message;
                     //mail.IsBodyHtml = true;
@@ -25,7 +31,7 @@ namespace sendToThings3
 
                     using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                     {
-                        smtp.Credentials = new NetworkCredential("owaygaming@gmail.com", "justinistscheisse");
+                        smtp.Credentials = new NetworkCredential(senderMail, senderPassword);
                         smtp.EnableSsl = true;
                         smtp.Send(mail);
                         return true;
