@@ -1,7 +1,7 @@
 ﻿
 namespace sendToThings3
 {
-    partial class SendFormular
+    partial class SendForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace sendToThings3
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendFormular));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendForm));
             this.tb_message = new System.Windows.Forms.TextBox();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.btn_send = new System.Windows.Forms.Button();
@@ -59,7 +59,7 @@ namespace sendToThings3
             this.tb_message.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tb_message.Size = new System.Drawing.Size(838, 144);
             this.tb_message.TabIndex = 5;
-            this.tb_message.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sendFormular_KeyDown);
+            this.tb_message.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendForm_KeyDown);
             // 
             // tb_title
             // 
@@ -70,8 +70,8 @@ namespace sendToThings3
             this.tb_title.Name = "tb_title";
             this.tb_title.Size = new System.Drawing.Size(838, 31);
             this.tb_title.TabIndex = 4;
-            this.tb_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sendFormular_KeyDown);
-            this.tb_title.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.sendFormular_PreviewKeyDown);
+            this.tb_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendForm_KeyDown);
+            this.tb_title.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.SendForm_PreviewKeyDown);
             // 
             // btn_send
             // 
@@ -87,8 +87,8 @@ namespace sendToThings3
             this.btn_send.TabIndex = 3;
             this.btn_send.Text = "send";
             this.btn_send.UseVisualStyleBackColor = false;
-            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
-            this.btn_send.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sendFormular_KeyDown);
+            this.btn_send.Click += new System.EventHandler(this.Btn_send_Click);
+            this.btn_send.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendForm_KeyDown);
             // 
             // panel1
             // 
@@ -124,8 +124,8 @@ namespace sendToThings3
             this.btn_cancel.TabIndex = 4;
             this.btn_cancel.Text = "cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
-            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
-            this.btn_cancel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.sendFormular_KeyDown);
+            this.btn_cancel.Click += new System.EventHandler(this.Btn_cancel_Click);
+            this.btn_cancel.KeyDown += new System.Windows.Forms.KeyEventHandler(this.SendForm_KeyDown);
             // 
             // p_all
             // 

@@ -10,7 +10,7 @@ namespace sendToThings3
 {
     class TrayContext : ApplicationContext
     {
-        private SendFormular _sendFormular = new SendFormular();
+        private SendForm _sendForm = new SendForm();
 
         private readonly NotifyIcon _trayIcon;
 
@@ -38,7 +38,7 @@ namespace sendToThings3
 
         void New(object sender, EventArgs e)
         {
-            _sendFormular.Show();
+            _sendForm.Show();
         }
 
         void Settings(object sender, EventArgs e)
