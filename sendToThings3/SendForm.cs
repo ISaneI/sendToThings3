@@ -45,6 +45,15 @@ namespace sendToThings3
             tb_title.Select();
         }
 
+        private void SendForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Hide();
+            }
+        }
+
 
         private void Hook_KeyPressed(object sender, KeyPressedEventArgs e)
         {

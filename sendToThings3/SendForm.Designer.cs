@@ -29,6 +29,7 @@ namespace sendToThings3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendForm));
             this.tb_message = new System.Windows.Forms.TextBox();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.btn_send = new System.Windows.Forms.Button();
@@ -186,13 +187,16 @@ namespace sendToThings3
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(862, 621);
-            this.ControlBox = false;
             this.Controls.Add(this.p_all);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(400, 39);
             this.Name = "SendForm";
             this.Text = "sendToThings";
             this.TopMost = true;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SendForm_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.p_message.ResumeLayout(false);
