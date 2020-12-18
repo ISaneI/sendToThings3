@@ -19,7 +19,7 @@ namespace sendToThings3
             // Initialize Tray Icon
             _trayIcon = new NotifyIcon()
             {
-                Icon = Resources.icon ,
+                Icon = Resources.logo ,
                 ContextMenu = new ContextMenu(new MenuItem[] {
                     new MenuItem("New Task", New),
                     new MenuItem("Settings", Settings),

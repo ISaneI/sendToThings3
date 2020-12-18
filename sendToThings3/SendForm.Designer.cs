@@ -29,7 +29,6 @@ namespace sendToThings3
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SendForm));
             this.tb_message = new System.Windows.Forms.TextBox();
             this.tb_title = new System.Windows.Forms.TextBox();
             this.btn_send = new System.Windows.Forms.Button();
@@ -180,7 +179,7 @@ namespace sendToThings3
             this.label1.Text = "Press TAB to add details  | CTRL + Enter or CTRL + S to send";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // sendFormular
+            // SendForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,9 +189,8 @@ namespace sendToThings3
             this.ControlBox = false;
             this.Controls.Add(this.p_all);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(400, 39);
-            this.Name = "sendFormular";
+            this.Name = "SendForm";
             this.Text = "sendToThings";
             this.TopMost = true;
             this.panel1.ResumeLayout(false);

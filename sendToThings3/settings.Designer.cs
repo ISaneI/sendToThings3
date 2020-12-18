@@ -29,6 +29,7 @@ namespace sendToThings3
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Settings));
             this.label1 = new System.Windows.Forms.Label();
             this.tbSettingsThingsMail = new System.Windows.Forms.TextBox();
             this.btn_settings_save = new System.Windows.Forms.Button();
@@ -154,6 +155,7 @@ namespace sendToThings3
             this.Controls.Add(this.btn_settings_save);
             this.Controls.Add(this.tbSettingsThingsMail);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Settings";
             this.Text = "settings";
             this.ResumeLayout(false);

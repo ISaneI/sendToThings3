@@ -62,7 +62,7 @@ namespace sendToThings3
 
 
 
-        /**
+        /** Moving the window without border (not working in current layout anyways) 
         protected override void WndProc(ref Message m)
         {
             switch (m.Msg)
