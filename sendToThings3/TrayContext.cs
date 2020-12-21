@@ -10,7 +10,7 @@ namespace sendToThings3
 {
     class TrayContext : ApplicationContext
     {
-        private sendFormular _sendFormular = new sendFormular();
+        private SendForm _sendForm = new SendForm();
 
         private readonly NotifyIcon _trayIcon;
 
@@ -19,15 +19,14 @@ namespace sendToThings3
             // Initialize Tray Icon
             _trayIcon = new NotifyIcon()
             {
-                Icon = Resources.icon ,
+                Icon = Resources.logo ,
                 ContextMenu = new ContextMenu(new MenuItem[] {
-                    new MenuItem("New", New),
+                    new MenuItem("New Task", New),
+                    new MenuItem("Settings", Settings),
                     new MenuItem("Exit", Exit)
                 }),
                 Visible = true
             };
-
-
         }
 
         void Exit(object sender, EventArgs e)
@@ -39,7 +38,12 @@ namespace sendToThings3
 
         void New(object sender, EventArgs e)
         {
-            _sendFormular.Show();
+            _sendForm.Show();
+        }
+
+        void Settings(object sender, EventArgs e)
+        {
+            new Settings().Show();
         }
     }
 }
