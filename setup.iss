@@ -34,6 +34,7 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
+Name: startup; Description: "Autostart on login"; GroupDescription: "{cm:AdditionalIcons}"
 
 [Files]
 Source: "sendToThings3\bin\Release\{#MyAppExeName}"; DestDir: "{app}"; Flags: ignoreversion
@@ -42,6 +43,7 @@ Source: "sendToThings3\bin\Release\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{userstartup}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: startup
 Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
 
 [Run]

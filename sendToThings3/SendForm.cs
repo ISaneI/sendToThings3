@@ -51,6 +51,9 @@ namespace sendToThings3
             {
                 e.Cancel = true;
                 this.Hide();
+                p_text.Visible = true;
+                p_message.Enabled = false;
+                p_message.Visible = false;
             }
         }
 
