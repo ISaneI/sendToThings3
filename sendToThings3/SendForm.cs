@@ -39,12 +39,6 @@ namespace sendToThings3
 
         }
 
-        //override onshow
-        protected override void OnShown(EventArgs e)
-        {
-            tb_title.Select();
-        }
-
         private void SendForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -68,7 +62,7 @@ namespace sendToThings3
             }
 
             this.Show();
-            tb_title.Select();
+            this.Activate();
 
         }
 
